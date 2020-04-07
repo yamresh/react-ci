@@ -1,18 +1,22 @@
 language: node_js
 node_js:
-  - "stable"
+  - "10"
 cache:
+  yarn: true
   directories:
     - node_modules
 script:
-  - npm test
-  - npm run test:coverage
-  - npm run build
+  - yarn test
+  - yarn test:coverage
+  - yarn build
 
 deploy:
   provider: pages
-  github_token: $github_token
+  github_token: $GITHUB_TOKEN
   local_dir: build
   keep_history: true
   on:
     branch: master
+notifications:
+  email:
+    - amreshy29@gmail.com
