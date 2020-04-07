@@ -17,7 +17,7 @@ deploy:
   local_dir: build
   keep_history: true
   on:
-    branch: master
+    branch: $BRANCH_NAME
 notifications:
   email:
     - amreshy29@gmail.com
