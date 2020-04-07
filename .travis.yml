@@ -11,13 +11,19 @@ script:
   - yarn build
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: build
-  keep_history: true
-  on:
-    branch: $BRANCH_NAME
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: build
+    keep_history: true
+    on:
+      branch: $BRANCH_NAME
+  - provider: heroku
+    api_key:
+      secure: $HEROKU_TOKEN
+    app: react-ci
+    on:
+      repo: yamresh/react-ci
 notifications:
   email:
     - amreshy29@gmail.com
