@@ -21,9 +21,10 @@ deploy:
   - provider: heroku
     api_key:
       secure: $HEROKU_TOKEN
-    app: react-ci
+    app: react-ci-amy
     on:
       repo: yamresh/react-ci
 notifications:
   email:
     - amreshy29@gmail.com
+    - testindia12@yopmail.com
